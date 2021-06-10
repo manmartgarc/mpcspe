@@ -79,7 +79,7 @@ class Board:
     def check_winner(self) -> str:
         playermap = {-1: 'blue', 1: 'red'}
         for i in reversed(range(self.x)):
-            for j in range(board.y):
+            for j in range(self.y):
                 check = self.check_neighbors(i, j)
                 if check != 0:
                     return playermap[check]
