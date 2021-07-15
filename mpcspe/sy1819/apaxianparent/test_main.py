@@ -21,7 +21,7 @@ def load_tests() -> dict[str, str]:
     for tfile in tfiles:
         with open(tfile, 'r') as f:
             for line in f.readlines():
-                print(line.split())
+                print(line.split('|'))
 
     return None
 
