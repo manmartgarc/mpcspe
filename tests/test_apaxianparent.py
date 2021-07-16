@@ -8,23 +8,11 @@ Created on Thursday, 15th July 2021 1:06:22 pm
 @purpose:   enter purpose
 ===============================================================================
 """
-from pathlib import Path
+from __future__ import annotations
 
 import pytest
-
-
-def load_tests() -> dict[str, str]:
-    tdir = Path(__file__).parent.joinpath('tests')
-    tfiles = tdir.glob('*.txt')
-    iotests = {}
-
-    for tfile in tfiles:
-        with open(tfile, 'r') as f:
-            for line in f.readlines():
-                print(line.split('|'))
-
-    return None
+from mpcspe.apaxianparent import main
 
 
 if __name__ == "__main__":
-    load_tests()
+    pass
