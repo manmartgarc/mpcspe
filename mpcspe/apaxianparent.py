@@ -10,8 +10,9 @@ Created on Wednesday, 9th June 2021 11:04:13 pm
 """
 import sys
 
-if __name__ == "__main__":
-    line = sys.stdin.read().rstrip().lower()
+
+def main(line: str):
+    line = line.rstrip().lower()
     y, p = line.split()
     if y.endswith('e'):
         sys.stdout.write(''.join((y, 'x', p)))
@@ -21,3 +22,7 @@ if __name__ == "__main__":
         sys.stdout.write(''.join((y, p)))
     else:
         sys.stdout.write(''.join((y, 'ex', p)))
+
+
+if __name__ == "__main__":
+    main(sys.stdin.read())
