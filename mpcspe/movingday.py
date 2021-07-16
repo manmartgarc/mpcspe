@@ -9,14 +9,13 @@ Created on Wednesday, 9th June 2021 11:29:44 pm
 ===============================================================================
 """
 import sys
-from dataclasses import dataclass
 
 
-@dataclass
 class Box:
-    length: int
-    width: int
-    height: int
+    def __init__(self, length: int, width: int, height: int) -> None:
+        self.length = length
+        self.width = width
+        self.height = height
 
     def get_volume(self) -> int:
         return self.length * self.width * self.height
