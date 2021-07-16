@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """
-Created on Friday, 16th July 2021 3:23:48 pm
+Created on Friday, 16th July 2021 7:13:19 pm
 ===============================================================================
-@filename:  batterup.py
+@filename:  cgratio.py
 @author:    Manuel Martinez (manmart@uchicago.edu)
 @project:   mpcspe | 2017-18
-@purpose:   batterup
+@purpose:   cgratio
 ===============================================================================
 """
 import sys
@@ -13,9 +13,16 @@ import sys
 
 def main(line: str) -> None:
     lines = line.splitlines()
-    inputs = list(map(int, lines[1].split()))
-    inputs = [i for i in inputs if i >= 0]
-    result = sum(inputs) / len(inputs)
+
+    total: int = 0
+    cgs: int = 0
+    for line in lines[1:]:
+        total += len(line)
+        cgs += line.count('C')
+        cgs += line.count('G')
+
+    result = (cgs / total) * 100
+
     sys.stdout.write(str(result))
 
 
