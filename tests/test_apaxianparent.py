@@ -10,9 +10,24 @@ Created on Thursday, 15th July 2021 1:06:22 pm
 """
 from __future__ import annotations
 
+import io
+from contextlib import redirect_stdout
+
 import pytest
 from mpcspe.apaxianparent import main
+from mpcspe.loaders import load_test_data
+
+TEST_DATA = load_test_data('apaxianparent')
+
+
+@pytest.mark.parametrize(('input', 'output'), TEST_DATA.items())
+def test_apaxianparent(input, output):
+    f = io.StringIO()
+    with redirect_stdout(f):
+        main(input)
+        s = f.getvalue()
+        assert output == s
 
 
 if __name__ == "__main__":
-    pass
+    tests = load_test_data('apaxianparent')
