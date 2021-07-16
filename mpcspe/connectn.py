@@ -86,8 +86,8 @@ class Board:
         return 'none'
 
 
-if __name__ == "__main__":
-    for i, line in enumerate(sys.stdin):
+def main(line: str):
+    for i, line in enumerate(line.splitlines()):
         line = line.rstrip()
         if i == 0:
             x, y, n = map(int, line.split())
@@ -101,3 +101,7 @@ if __name__ == "__main__":
         sys.stdout.write(winner.upper())
     else:
         sys.stdout.write(f'{winner.upper()} WINS')
+
+
+if __name__ == "__main__":
+    main(sys.stdin.read())
