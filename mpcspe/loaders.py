@@ -16,11 +16,10 @@ import pkg_resources
 
 
 def load_test_data(project: str) -> dict[str, str]:
-    tdir = Path(
-        pkg_resources.resource_filename('mpcspe', f'testdata/{project}'))
+    tdir = Path(pkg_resources.resource_filename('mpcspe', 'testdata'))
 
-    ifiles = list(tdir.glob('in*.txt'))
-    ofiles = list(tdir.glob('out*.txt'))
+    ifiles = list(tdir.glob(f'{project}*.in'))
+    ofiles = list(tdir.glob(f'{project}*.ans'))
 
     if len(ifiles) != len(ofiles):
         raise ValueError(f'tests should be the same as outputs for {project}')
@@ -31,6 +30,6 @@ def load_test_data(project: str) -> dict[str, str]:
             input = f.read()
         with open(outfile) as f:
             output = f.read()
-        tests[input] = output
+        tests[input] = output.strip()
 
     return tests

@@ -12,7 +12,6 @@ import sys
 
 
 def main(line: str):
-    line = line.rstrip().lower()
     y, p = line.split()
     if y.endswith('e'):
         sys.stdout.write(''.join((y, 'x', p)))

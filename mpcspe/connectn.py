@@ -88,7 +88,6 @@ class Board:
 
 def main(line: str):
     for i, line in enumerate(line.splitlines()):
-        line = line.rstrip()
         if i == 0:
             x, y, n = map(int, line.split())
             board = Board(x=x, y=y, n=n)
