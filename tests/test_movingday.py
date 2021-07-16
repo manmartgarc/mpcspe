@@ -4,8 +4,8 @@ Created on Thursday, 15th July 2021 11:36:13 pm
 ===============================================================================
 @filename:  test_movingday.py
 @author:    Manuel Martinez (manmart@uchicago.edu)
-@project:   enter project name
-@purpose:   enter purpose
+@project:   mpcspe | 2018-19
+@purpose:   unit tests for movingday
 ===============================================================================
 """
 import io
