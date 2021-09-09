@@ -9,7 +9,6 @@ Created on Friday, 16th July 2021 7:25:53 pm
 ===============================================================================
 """
 import io
-import math
 from contextlib import redirect_stdout
 
 import pytest
